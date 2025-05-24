@@ -1,0 +1,73 @@
+name: Repo Checkout
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 20 * * *'  # 每天UTC 20:00运行一次
+  workflow_dispatch:  # 支持手动触发
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout collecting repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 获取完整历史以便合并
+
+      - name: Set up Git
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          echo "Git setup complete"
+
+      - name: Sync external repositories to subfolders
+        run: |
+          # 定义外部仓库和对应的子文件夹
+          declare -A projects=(
+            ["hd9211"]="https://github.com/hd9211/Tvbox1.git"
+          )
+
+          for folder in "${!projects[@]}"; do
+            external_repo="${projects[$folder]}"
+            echo "Starting sync for $external_repo to $folder"
+
+            # 克隆外部仓库到临时目录（公开仓库无需 PAT）
+            temp_dir=$(mktemp -d)
+            echo "Cloning $external_repo to $temp_dir"
+            if ! git clone --depth 1 "$external_repo" "$temp_dir"; then
+              echo "Error: Failed to clone $external_repo"
+              continue
+            fi
+
+            # 确保子文件夹存在
+            mkdir -p "$folder"
+
+            # 同步外部仓库到子文件夹
+            echo "Syncing $external_repo to $folder"
+            if ! rsync -av --delete --exclude '.git' "$temp_dir/" "./$folder/"; then
+              echo "Error: rsync to $folder failed"
+              continue
+            fi
+
+            # 检查是否有更改需要提交
+            git add "$folder"
+            if ! git diff --staged --quiet; then
+              echo "Changes detected, committing to collecting-repo"
+              if ! git commit -m "Sync $external_repo"; then
+                echo "Error: Git commit failed for $folder"
+                continue
+              fi
+              echo "Pushing to collecting-repo"
+              if ! git push origin main; then
+                echo "Error: Git push failed for collecting-repo"
+                continue
+              fi
+            else
+              echo "No changes to commit for $folder"
+            fi
+
+            rm -rf "$temp_dir"
+            echo "Completed sync for $folder"
+          done
