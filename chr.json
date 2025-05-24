@@ -1,19 +1,19 @@
 {
     "urls":
 [
-    "url":"https://raw.githubusercontent.com/atsushi444/tvbox/main/tvbox.json","name":"atsushi444",
+    {"url":"https://raw.githubusercontent.com/atsushi444/tvbox/main/tvbox.json","name":"atsushi444"},
     
     {"url":"https://github.moeyy.xyz/https://raw.githubusercontent.com/liu5978/vedio-phone/master/tvbox/3.json","name":"liu5978_3"},
 
-    "url":"https://raw.githubusercontent.com/jigedos/dy309/main/tvbox.json","name":"jigedos",
+    {"url":"https://raw.githubusercontent.com/jigedos/dy309/main/tvbox.json","name":"jigedos"},
 
-    "url":"https://raw.githubusercontent.com/FreakLongs/tvbox-config/main/adult-2.json","name":"FreakLongs-2",
+    {"url":"https://raw.githubusercontent.com/FreakLongs/tvbox-config/main/adult-2.json","name":"FreakLongs-2"},
 
-    "url":"https://raw.githubusercontent.com/zjj3555/tvbox18/main/video.json","name":"zjj3555",
+    {"url":"https://raw.githubusercontent.com/zjj3555/tvbox18/main/video.json","name":"zjj3555"},
     
-    "url":"https://raw.githubusercontent.com/shan790903/1111/refs/heads/main/ShanTV/ShanZy18.json","name":"shan790903",
+    {"url":"https://raw.githubusercontent.com/shan790903/1111/refs/heads/main/ShanTV/ShanZy18.json","name":"shan790903"},
     
-    "url":"https://raw.githubusercontent.com/liu5978/vedio-phone/master/tvbox/18cn.json","name":"liu5978",
+    {"url":"https://raw.githubusercontent.com/liu5978/vedio-phone/master/tvbox/18cn.json","name":"liu5978"},
 
     {"url":"https://github.moeyy.xyz/https://raw.githubusercontent.com/saulxxx/future/main/l8.json","name":"saulxxx_l8"},
 
@@ -33,9 +33,9 @@
 
 
 
-    "url":"","name":"",
+    {"url":"","name":""},
 
-    "url":"","name":""
+    {"url":"","name":""}
 ]
 }
 
