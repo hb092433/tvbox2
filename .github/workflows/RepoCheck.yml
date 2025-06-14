@@ -27,6 +27,8 @@ jobs:
           # 定义外部仓库和对应的子文件夹
           declare -A projects=(
             ["hd9211"]="https://github.com/hd9211/Tvbox1.git"
+            ["fish2018"]="https://github.com/fish2018/lib.git"
+            
           )
 
           for folder in "${!projects[@]}"; do
