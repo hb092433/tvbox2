@@ -28,6 +28,7 @@ jobs:
           declare -A projects=(
             ["hd9211"]="https://github.com/hd9211/Tvbox1.git"
             ["fish2018"]="https://github.com/fish2018/lib.git"
+            ["lishuncai8881"]="https://github.com/lishuncai8881/TVBox.git"
             
           )
 
