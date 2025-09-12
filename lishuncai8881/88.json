@@ -3325,47 +3325,23 @@
 
   "lives": [
     {
-      "name": "A传媒",
+      "name": "洪宇直播A",
       "type": 0,
-      "url": "./lib/alive.txt",
+      "url": "https://hub.gitmirror.com/https://raw.githubusercontent.com/huangxinyueus/zby/refs/heads/main/%E5%AE%B6%E7%9A%84%E5%91%B3%E9%81%93/%E5%AE%B6%E5%BE%97%E5%91%B3%E9%81%93.txt",
       "playerType": 2,
       "timeout": 10
+
+
     },
     {
-      "name": "B传媒",
+      "name": "洪宇直播B",
       "type": 0,
-      "url": "./lib/blive.txt",
+      "url": "https://ghfast.top/https://raw.githubusercontent.com/iTCoffe/Collect-iTV/refs/heads/main/Keep_iTV.txt",
       "playerType": 2,
       "timeout": 10
-    },
-    {
-      "name": "C传媒",
-      "type": 0,
-      "url": "./lib/clive.txt",
-      "playerType": 2,
-      "timeout": 10
-    },
-    {
-      "name": "D传媒",
-      "type": 0,
-      "url": "./lib/dlive.txt",
-      "playerType": 2,
-      "timeout": 10
-    },
-    {
-      "name": "E传媒",
-      "type": 0,
-      "url": "./lib/elive.txt",
-      "playerType": 2,
-      "timeout": 10
-    },
-    {
-      "name": "F传媒",
-      "type": 0,
-      "url": "./lib/flive.txt",
-      "playerType": 2,
-      "timeout": 10
-    }
+
+
+	}
   ],
   "parses": [
     {
